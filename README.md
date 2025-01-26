@@ -1,12 +1,13 @@
-MBTI Tweet Classifier Using Local LLMs
+# MBTI Tweet Classifier Using Local LLMs
 
+## Overview
 The advent of large language models (LLMs) has revolutionized many aspects of natural language processing, including their potential to analyze personality traits based on textual data. This research project seeks to extend the work of Murphy (2024), which demonstrated the efficacy of GPT-3.5 and GPT-4 in predicting Myers-Briggs Type Indicator (MBTI) personality types using tweets. By leveraging local LLMs powered by Ollama’s infrastructure, this study aims to replicate and expand upon Murphy’s experiment. Specifically, it will investigate whether state-of-the-art local LLMs, such as llama3.1:8b, can achieve similar or improved accuracy in predicting MBTI classifications.
 
 Unlike the original research, this study introduces a dual-layer prediction framework. The first objective is to predict the overall MBTI type for each individual. The second objective focuses on predicting the classifications for each of the four MBTI parameters (Introversion-Extraversion, Intuition-Sensing, Thinking-Feeling, and Judging-Perceiving) independently. Additionally, the study will evaluate and compare the predictive performance of multiple local LLMs, exploring their viability as alternatives to cloud-based solutions.
 
 This research not only contributes to the understanding of local LLMs’ capabilities but also addresses privacy concerns by emphasizing locally hosted models, which mitigate risks associated with transmitting sensitive data to external servers. By testing the efficacy of localized AI solutions in personality prediction, this study offers valuable insights into the scalability and ethical implications of micro-targeting and personalization in digital spaces.
 
-Methodology
+## Methodology
 
 This project implements a system to predict Myers-Briggs Personality Types (MBTI) from textual data, specifically individuals’ last 50 tweets. The system employs a local large language model (LLM), llama3.1:8b, powered by Ollama, to classify text into one of 16 MBTI categories. Below is an outline of the methodology:
 
@@ -70,16 +71,28 @@ Predictions are compared to the known MBTI type, evaluating both the overall pre
 
 This methodology ensures a systematic, reproducible approach to evaluating local LLMs’ ability to predict personality types from textual data. The project contributes to understanding the capabilities of local AI systems for personalized applications while addressing ethical considerations.
 
-Results:
+## Results:
 
-Model - llama3.1:8b
-N = 400
-Approach - one request to LLM for classification
-
-classified_results_llama3_1_8b.csv
+### First Run:
+- classified_results_llama3_1_8b.csv
+- Model - llama3.1:8b
+- N = 400
+- Approach - one request to LLM for classification
+- Prompt: 
+"Predict what this person’s personality type using the Myers-Briggs Personality Type scale. Provide only the acronym of the personality type you think the person is. Here are their last 50 Tweets:"
 
 Total Accuracy: 49.00%
-EvI Accuracy: 68.25%
-SvN Accuracy: 88.75%
-TvF Accuracy: 77.00%
-JvP Accuracy: 71.75%
+- EvI Accuracy: 68.25%
+- SvN Accuracy: 88.75%
+- TvF Accuracy: 77.00%
+- JvP Accuracy: 71.75%
+
+## Second Run:
+- results_llama3.1:8b_3.csv
+- Model - llama3.1:8b
+- N = 400
+- Approach - one request to LLM for classification
+- Prompt: 
+"Predict what this person’s personality type using the Myers-Briggs Personality Type scale. Provide only the acronym of the personality type you think the person is. Here are their last 50 Tweets:"
+
+Total Accuracy:
