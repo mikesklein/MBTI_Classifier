@@ -21,11 +21,11 @@ Predict what this person’s personality type using the Myers-Briggs Personality
 Provide only the acronym of the personality type you think the person is. 
 Here are their last 50 Tweets:
 
+Prediction Generation:
 
-	•	Prediction Generation:
-	•	The generate function uses the Ollama API to process the input prompt and generate a prediction.
-	•	A regex pattern is applied to extract the predicted MBTI type from the model’s response.
-	•	If no match is found, the prediction is labeled as “UNKNOWN.”
+The generate function uses the Ollama API to process the input prompt and generate a prediction.
+A regex pattern is applied to extract the predicted MBTI type from the model’s response.
+If no match is found, the prediction is labeled as “UNKNOWN.”
 
 3. MBTI Dimension Accuracy
 
@@ -70,7 +70,16 @@ Predictions are compared to the known MBTI type, evaluating both the overall pre
 
 This methodology ensures a systematic, reproducible approach to evaluating local LLMs’ ability to predict personality types from textual data. The project contributes to understanding the capabilities of local AI systems for personalized applications while addressing ethical considerations.
 
-
-
 Results:
 
+Model - llama3.1:8b
+N = 400
+Approach - one request to LLM for classification
+
+classified_results_llama3_1_8b.csv
+
+Total Accuracy: 49.00%
+EvI Accuracy: 68.25%
+SvN Accuracy: 88.75%
+TvF Accuracy: 77.00%
+JvP Accuracy: 71.75%
