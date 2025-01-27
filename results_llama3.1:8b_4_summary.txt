@@ -1,0 +1,5 @@
+Total Accuracy: 0.00%
+EvI Accuracy: 25.00%
+SvN Accuracy: 50.00%
+TvF Accuracy: 75.00%
+JvP Accuracy: 75.00%

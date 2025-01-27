@@ -100,3 +100,14 @@ EvI Accuracy: 69.75%
 SvN Accuracy: 90.00%
 TvF Accuracy: 72.50%
 JvP Accuracy: 70.75%
+
+## Third Run: 
+- Model - llama3.1:8b
+- N = 400
+- Approach - using 4 requests to LLM for dimension-wise classification
+- Prompts:
+  - EvI Prompt: "Predict if this person is an Extravert (E) or Introvert (I) using the Myers-Briggs Personality Type scale. Provide only the acronym of the personality type you think the person is. Here are their last 50 Tweets:"
+  - SvN Prompt: "Predict if this person is an Intuitive (N) or Sensing (S) type using the Myers-Briggs Personality Type scale. Provide only the acronym of the personality type you think the person is. Here are their last 50 Tweets:"
+  - TvF Prompt: "Predict if this person is a Thinking (T) or Feeling (F) type using the Myers-Briggs Personality Type scale. Provide only the acronym of the personality type you think the person is. Here are their last 50 Tweets:"
+  - JvP Prompt: "Predict if this person is a Judging (J) or Perceiving (P) type using the Myers-Briggs Personality Type scale. Provide only the acronym of the personality type you think the person is. Here are their last 50 Tweets:"
+  
