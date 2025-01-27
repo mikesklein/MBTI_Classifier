@@ -95,4 +95,8 @@ Total Accuracy: 49.00%
 - Prompt: 
 "Predict what this person’s personality type using the Myers-Briggs Personality Type scale. Provide only the acronym of the personality type you think the person is. Here are their last 50 Tweets:"
 
-Total Accuracy:
+Total Accuracy: 50.75%
+EvI Accuracy: 69.75%
+SvN Accuracy: 90.00%
+TvF Accuracy: 72.50%
+JvP Accuracy: 70.75%
