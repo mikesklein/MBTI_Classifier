@@ -78,14 +78,6 @@ A significant portion of the MBTI data originates from the Personality Café dat
 	•	Variety of text formats: Includes forum discussions, which resemble tweets in informal tone and length.
 	•	Data diversity: Covers a wide range of topics, enabling the exploration of linguistic patterns associated with MBTI traits.
 
-### Ethical Considerations and Preprocessing
-
-The tweets used in this project were collected in adherence to ethical guidelines, ensuring compliance with data privacy standards. Sensitive data, such as usernames and identifiable information, was excluded to maintain anonymity. Preprocessing steps included:
-- Noise Reduction: Removing non-alphanumeric characters, links, and extraneous formatting.
-- Sampling: Selecting 400 samples for computational feasibility and controlled evaluation.
-
-By leveraging these data sources and preprocessing steps, this project ensures a robust framework for evaluating the efficacy of local LLMs in personality classification. The use of local models further enhances data privacy by avoiding transmission of sensitive information to external servers.
-
 ## Results:
 
 ### First Run:
