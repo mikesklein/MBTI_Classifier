@@ -9,7 +9,7 @@ This research not only contributes to the understanding of local LLMs’ capabil
 
 ## Methodology
 
-This project implements a system to predict Myers-Briggs Personality Types (MBTI) from textual data, specifically individuals’ last 50 tweets. The system employs a local large language model (LLM), llama3.1:8b, powered by Ollama, to classify text into one of 16 MBTI categories. Below is an outline of the methodology:
+This project implements a system to predict Myers-Briggs Personality Types (MBTI) from textual data, specifically individuals’ last 50 tweets. The system employs local large language models (LLM), using powered by Ollama, to classify text into one of 16 MBTI categories. Below is an outline of the methodology:
 
 1. Data Input and Preprocessing
 	•	Input Data: The system reads a CSV file containing individuals’ last 50 tweets (posts) and their known MBTI type (type).
@@ -71,6 +71,25 @@ Predictions are compared to the known MBTI type, evaluating both the overall pre
 
 This methodology ensures a systematic, reproducible approach to evaluating local LLMs’ ability to predict personality types from textual data. The project contributes to understanding the capabilities of local AI systems for personalized applications while addressing ethical considerations.
 
+## Data Source and Personality Café Dataset
+
+The data used in this project primarily consists of tweets and MBTI personality labels, curated to enable personality type predictions. The dataset includes individuals’ last 50 tweets, paired with their known Myers-Briggs Type Indicator (MBTI) personality types. This structure allows for testing the ability of local LLMs to classify text-based data into MBTI categories accurately.
+
+### Personality Café Dataset
+
+A significant portion of the MBTI data originates from the Personality Café dataset, which has been widely used in personality classification research. This dataset aggregates self-reported MBTI types and textual data from forum posts. Although the dataset was not directly used in this study, it serves as a foundational reference for understanding personality classification from textual data. Key attributes of the Personality Café dataset include:
+	•	Self-reported MBTI types: Users provide their personality types, which are used as ground truth for model evaluation.
+	•	Variety of text formats: Includes forum discussions, which resemble tweets in informal tone and length.
+	•	Data diversity: Covers a wide range of topics, enabling the exploration of linguistic patterns associated with MBTI traits.
+
+Ethical Considerations and Preprocessing
+
+The tweets used in this project were collected in adherence to ethical guidelines, ensuring compliance with data privacy standards. Sensitive data, such as usernames and identifiable information, was excluded to maintain anonymity. Preprocessing steps included:
+- Noise Reduction: Removing non-alphanumeric characters, links, and extraneous formatting.
+- pling: Selecting 400 samples for computational feasibility and controlled evaluation.
+
+By leveraging these data sources and preprocessing steps, this project ensures a robust framework for evaluating the efficacy of local LLMs in personality classification. The use of local models further enhances data privacy by avoiding transmission of sensitive information to external servers.
+
 ## Results:
 
 ### First Run:
@@ -102,12 +121,27 @@ TvF Accuracy: 72.50%
 JvP Accuracy: 70.75%
 
 ## Third Run: 
-- Model - llama3.1:8b
+- Model - phi4
 - N = 400
-- Approach - using 4 requests to LLM for dimension-wise classification
-- Prompts:
-  - EvI Prompt: "Predict if this person is an Extravert (E) or Introvert (I) using the Myers-Briggs Personality Type scale. Provide only the acronym of the personality type you think the person is. Here are their last 50 Tweets:"
-  - SvN Prompt: "Predict if this person is an Intuitive (N) or Sensing (S) type using the Myers-Briggs Personality Type scale. Provide only the acronym of the personality type you think the person is. Here are their last 50 Tweets:"
-  - TvF Prompt: "Predict if this person is a Thinking (T) or Feeling (F) type using the Myers-Briggs Personality Type scale. Provide only the acronym of the personality type you think the person is. Here are their last 50 Tweets:"
-  - JvP Prompt: "Predict if this person is a Judging (J) or Perceiving (P) type using the Myers-Briggs Personality Type scale. Provide only the acronym of the personality type you think the person is. Here are their last 50 Tweets:"
-  
+- Approach - system and user prompts. 
+- System prompt "You are an expert personality classifier based on the Myers-Briggs Personality Type scale. Your task is to analyze text input and classify personality traits accurately. Do not provide explanations, context, or additional text—respond with the acronym only."
+- User prompt Predict what this person’s personality type using the Myers-Briggs Personality Type scale.  In your response, provide only the acronym of the personality type you think the person is. Again, only provide a four letter response based on Myers-Briggs. Here are their last 50 Tweets:
+
+Total Accuracy (predict all four): 62.00%
+- EvI Accuracy: 88.75%
+- SvN Accuracy: 91.50%
+- TvF Accuracy: 84.00%
+- JvP Accuracy: 74.75%
+
+## Fourth Run:
+- Model - llama3.1:8b
+ - N = 400
+- Approach - system and user prompts. 
+- System prompt "You are an expert personality classifier based on the Myers-Briggs Personality Type scale. Your task is to analyze text input and classify personality traits accurately. Do not provide explanations, context, or additional text—respond with the acronym only."
+- User prompt Predict what this person’s personality type using the Myers-Briggs Personality Type scale.  In your response, provide only the acronym of the personality type you think the person is. Again, only provide a four letter response based on Myers-Briggs. Here are their last 50 Tweets:
+
+Total Accuracy (predict all four): 46.75%
+- EvI Accuracy: 72.50%
+- SvN Accuracy: 90.00%
+- TvF Accuracy: 81.50%
+- JvP Accuracy: 71.75%
